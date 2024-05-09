@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youssef <youssef@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
+/*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
 /*   Updated: 2024/05/09 19:19:52 by youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "../includes/push_swap.c"
 
-typedef struct s_stack
+
+int main(int ac, char **av)
 {
-	int				num;
-	int 			position;
-	struct s_stack	*next;
-	
-} t_stack;
+    t_stack *a;
+    t_stack *b;
+    
+    if (ac > 1)
+    {
 
-
-
-#endif
+    }
+}
