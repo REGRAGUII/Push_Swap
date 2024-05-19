@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/15 20:55:01 by ryuuk_reg        ###   ########.fr       */
+/*   Updated: 2024/05/19 13:16:19 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,35 @@ char	**ft_checker(char **av, int ac)
 {
 	char	**arg;
 	char 	*join;
+	char	*temp;
 	int		i;
 
-	i = 0;
-	join = '\0';
+	i = 1;
+	join = NULL;
+	temp = NULL;
+	arg = NULL;
 	if (ac < 2 || av[i] == NULL)
 		exit(1);
-	while (i < ac)
+	while (i <= ac)
 	{
-		join = ft_strjoin(join, av[i]);
+		temp = ft_strjoin(join, av[i]);
 		free(join);
+		join = temp;
+		temp = ft_strjoin(join, " ");
+		free(join);
+		join = temp;
 		i++;
 	}
 	arg = ft_split(join, ' ');
-	free(join);
+	i = 0;
+	// while (arg[i])
+	// {
+	// 	// printf("%s\n", arg[i]);
+	// 	free(arg[i]);
+	// 	i++;
+	// }
+	free(arg);
+	// free(join);
 	return (arg);
 }
 
@@ -40,8 +55,13 @@ int main(int ac, char **av)
     t_stack	*b;
     char	**arg;
 
-    arg = NULL;
+    int i = 0;
+	arg = NULL;
 	arg = ft_checker(av, ac);
-	printf("%s", *arg);
-	
+		while (arg[i])
+	{
+		printf("%s\n", arg[i]);
+		// free(arg[i]);
+		i++;
+	}
 }

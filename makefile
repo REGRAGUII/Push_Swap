@@ -1,6 +1,6 @@
 NAME = push_swap
-CC = cc -fsanitize=address
-# CFLAGS = -Wall -Wextra -Werror
+CC = cc 
+# CFLAGS = -Wall -Wextra -Werrori -fsanitize=address
 SRC = 	main.c \
 		helper.c \
 		./exit+free/ft_error.c \
