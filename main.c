@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/19 13:16:19 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/19 13:29:25 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ char	**ft_checker(char **av, int ac)
 	}
 	arg = ft_split(join, ' ');
 	i = 0;
-	// while (arg[i])
-	// {
-	// 	// printf("%s\n", arg[i]);
-	// 	free(arg[i]);
-	// 	i++;
-	// }
+	while (arg[i])
+	{
+		// printf("%s\n", arg[i]);
+		free(arg[i]);
+		i++;
+	}
 	free(arg);
-	// free(join);
+	free(join);
 	return (arg);
 }
 
@@ -59,9 +59,5 @@ int main(int ac, char **av)
 	arg = NULL;
 	arg = ft_checker(av, ac);
 		while (arg[i])
-	{
-		printf("%s\n", arg[i]);
-		// free(arg[i]);
-		i++;
-	}
+
 }
