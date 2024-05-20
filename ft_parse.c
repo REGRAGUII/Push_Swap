@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:45:55 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/20 17:45:11 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:46:25 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int valid_arg(char *str)
 	i = 0;
 	while(str[i])
 	{
-		if(!ft_isdigit(str[i] && str[i] == ' ' && str[i] == '+' && str[i] == "-"))
+		if(!ft_isdigit(str[i]) && str[i] == ' ' && str[i] == '+' && str[i] == "-")
 			return(0);
 		if(i > 0 && ft_isdigit(str[i]) && (str[i] == '-' || str[i] == '+'))
 			return (0);
