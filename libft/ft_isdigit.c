@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/10/30 18:27:57 by yregragu          #+#    #+#             */
+/*   Updated: 2023/11/04 14:04:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+int	ft_isdigit(int x)
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
-
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	if (x >= 48 && x <= 57)
+		return (1);
+	return (0);
+}

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/06 17:30:19 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/05 18:44:09 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+char	*ft_strdup(const char *s1)
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
+	char	*dup;
+	size_t	x;
 
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	x = 0;
+	dup = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!dup)
+		return (0);
+	while (s1[x] != '\0')
+	{
+		dup[x] = s1[x];
+		x++;
+	}
+	dup[x] = '\0';
+	return (dup);
+}

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/07 17:36:49 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/06 16:44:47 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
+	unsigned int	i;
+	char			*sub;
 
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	i = 0;
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s))
+		len = 0;
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	sub = malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (0);
+	while (i < len)
+	{
+		sub[i++] = s[start++];
+	}
+	sub[i] = '\0';
+	return (sub);
+}

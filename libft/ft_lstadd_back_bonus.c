@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/30 10:41:09 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/09 15:07:22 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
+	t_list	*temp;
 
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	temp = *lst;
+	if (!temp)
+	{
+		*lst = new;
+		return ;
+	}
+	while (temp)
+	{
+		if (temp->next)
+			temp = temp->next;
+		else
+		{
+			temp->next = new;
+			return ;
+		}
+	}
+}

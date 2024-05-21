@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/30 10:45:14 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/05 19:53:26 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
-
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	if (!lst || !del)
+		return ;
+	del (lst->content);
+	free (lst);
+}

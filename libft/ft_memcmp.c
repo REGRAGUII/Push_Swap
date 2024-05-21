@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 22:17:25 by yregragu         ###   ########.fr       */
+/*   Created: 2023/11/03 18:40:02 by yregragu          #+#    #+#             */
+/*   Updated: 2023/12/07 22:28:31 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-#define PUSH_SWAP
+#include "libft.h"
 
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "../libft/libft.h"
-
-typedef struct s_stack
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
-	
-} t_stack;
+	unsigned char	*s01;
+	unsigned char	*s02;
+	size_t			i;
 
-void    ft_error(char *message, int fdd);
-
-t_stack	*ft_parse(char **av, int ac);
-t_stack *ft_listfill(char **str);
-
-
-
-#endif
+	i = 0;
+	s01 = (unsigned char *)s1;
+	s02 = (unsigned char *)s2;
+	if (!n)
+		return (0);
+	while (i < n)
+	{
+		if (s01[i] != s02[i])
+			return (s01[i] - s02[i]);
+		i++;
+	}
+	return (0);
+}

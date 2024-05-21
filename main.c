@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/20 15:46:52 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/21 22:24:03 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ int main(int ac, char **av)
 	if (ac < 2 || av[i] == NULL)
 		exit(1);
 	args = ft_parse(av, ac);
-
+	while(args)
+	{
+		printf("%d", args->num);
+		args = args->next;
+	}
 }
