@@ -1,5 +1,5 @@
 
-// #include "./includes/push_swap.h"
+#include "./includes/push_swap.h"
 
 // int	ft_atoi(const char *nptr)
 // {
@@ -195,3 +195,15 @@
 // 	return(0); 
 // }
 
+void	free_double(char **str)
+{
+    int i;
+
+    i = 0;
+ 	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}

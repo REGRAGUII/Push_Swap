@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryuuk_reg <ryuuk_reg@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:11:41 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/15 18:08:25 by ryuuk_reg        ###   ########.fr       */
+/*   Updated: 2024/05/23 18:08:31 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-t_list *ft_swap(stack a)
+t_list *ft_swap(t_stack *a)
 {
 	
 }

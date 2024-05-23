@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/21 22:24:03 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:07:40 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@
 
 int main(int ac, char **av)
 {
-    t_stack	*args;
+    t_stack	*a;
+	t_stack *b;
 
-    int i = 0;
+	a = NULL;
+	b = NULL;
+    int i = 1;
 	if (ac < 2 || av[i] == NULL)
 		exit(1);
-	args = ft_parse(av, ac);
-	while(args)
-	{
-		printf("%d", args->num);
-		args = args->next;
-	}
+	if(!ft_parse(a, av +1, ac - 1))
+		exit(1);
+	
+	// while(args)
+	// {
+	// 	printf("%d", args->num);
+	// 	args = args->next;
+	// }
 }

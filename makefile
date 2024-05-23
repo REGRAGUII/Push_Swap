@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = cc -fsanitize=address
+CC = cc 
 # CFLAGS = -Wall -Wextra -Werrori 
 SRC = 	main.c \
 		helper.c \
@@ -7,6 +7,7 @@ SRC = 	main.c \
 		ft_parse.c \
 		libft/libft.a \
 		
+
 ${NAME} : ${SRC}
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
