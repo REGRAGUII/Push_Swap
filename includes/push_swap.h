@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/23 15:52:56 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/23 22:49:38 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,22 @@
 #include <stdio.h>
 #include "../libft/libft.h"
 
-typedef struct s_stack
+typedef struct s_list
 {
-	int				num;
-	int				position;
-	struct s_stack	*next;
+	int				content;
+	struct s_list	*next;
 	
-} t_stack;
+} t_list;
 
 void    ft_error(char *message, int fdd);
-char	*ft_parse(t_stack **a, char **av, int size);
+int		ft_parse(t_list **a, char **av, int size);
 int		valid_arg(char *str);
-// t_stack *ft_listfill(char **str);
 void	free_double(char **str);
-void	build_stack(t_stack **a, char *str);
+void	build_stack(t_list **a, char *str);
+//linked list functions
+t_list	*new_node(int content);		
+void	lstadd_back(t_list **lst, t_list *new);
+
+void print_list(t_list *lst);
 
 #endif
