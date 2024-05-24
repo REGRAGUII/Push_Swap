@@ -6,11 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:45:55 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/23 23:40:17 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/24 23:31:36 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+
 
 t_list *new_node (int cont)
 {
@@ -23,6 +25,7 @@ t_list *new_node (int cont)
     node->next = NULL;
     return (node);   
 }
+
 
 void	lstadd_back(t_list **lst, t_list *new)
 {
@@ -71,38 +74,19 @@ int valid_arg(char *str)
     return 1;
 }
 
-void	build_stack(t_list **a, char *str)
-{
-    int i;
-    size_t num;
-	
-    i = 0;
-    num = ft_atoi(str);
-	lstadd_back(a, new_node(num));
-}
 
-void print_list(t_list *lst) {
-    printf("List contents: ");
-    while (lst) 
-	{
-        printf("%d ", lst->content);
-        lst = lst->next;
-    }
-    printf("\n");
-}
+
 
 int	ft_parse(t_list **a, char **av, int size)
 {
 	int		i;
 	int		j;
 	char	**str;
-	int c;
 
-	j = 0;
-    i = 0;
+    j = 0;
 	while (j <= size)
 	{
-		str = ft_split(av[j], ' ');
+		str = ft_split(av[j++], ' ');
 		if(!str)
             return (0);
         i = 0;
@@ -111,14 +95,13 @@ int	ft_parse(t_list **a, char **av, int size)
             if(!valid_arg(str[i]))
 			{
 				free_double(str);
-                return (0);
+				free_stack(a);
+                exit(1);
 			}
 			build_stack(a, str[i]);
             i++;  
         }
 		free_double(str);
-		j++;
 	}
 	return (1);
-    free_double(str);
 }

@@ -2,9 +2,10 @@ NAME = push_swap
 CC = cc 
 # CFLAGS = -Wall -Wextra -Werrori 
 SRC = 	main.c \
-		helper.c \
+		free.c \
 		ft_error.c \
 		ft_parse.c \
+		ft_stack.c \
 		libft/libft.a \
 		
 

@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/21 19:47:22 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/24 23:50:00 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,5 @@ int	ft_atoi(const char *nptr)
 			break ;
 		nptr++;
 	}
-	if((size_t)rs > INT_MAX || (ssize_t)rs < INT_MIN)
-		return(0);
 	return (sg * rs);
 }
