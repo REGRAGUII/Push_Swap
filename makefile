@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = cc 
+CC = cc -fsanitize=address
 # CFLAGS = -Wall -Wextra -Werrori 
 SRC = 	main.c \
 		free.c \
@@ -14,7 +14,9 @@ ${NAME} : ${SRC}
 
 all : ${NAME}
 
-clean :
-	rm -rf 
+fclean :
+	rm -rf $(NAME)
 
-re : 
+re : fclean all
+
+.PHONY : all clean fclea re

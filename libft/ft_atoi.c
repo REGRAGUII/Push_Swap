@@ -6,36 +6,39 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:39:00 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/24 23:50:00 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/27 21:11:41 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
-int	ft_atoi(const char *nptr)
+
+long	ft_atoi(const char *nptr)
 {
-	int	sg;
-	int	rs;
+	int		sg;
+	long	rs;
+	int		i;
 	
-
+	i = 0;
 	sg = 1;
 	rs = 0;
-	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-')
 	{
 		sg = -1;
-		nptr++;
+		i++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (*nptr)
+	else if (nptr[i] == '+')
+		i++;		
+	while (nptr[i])
 	{
-		if (*nptr >= '0' && *nptr <= '9')
-			rs = rs * 10 + *nptr - '0';
-		else
-			break ;
-		nptr++;
+		if(nptr[i] >= '0' && nptr[i] <= '9')
+			rs = rs * 10 + nptr[i] - '0';
+		if (sg * rs > 2147483647 || sg * rs < -2147483648)
+			return (2147483648);
+		i++;
 	}
 	return (sg * rs);
 }

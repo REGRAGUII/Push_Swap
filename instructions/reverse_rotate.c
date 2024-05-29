@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:11:41 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/23 18:08:31 by yregragu         ###   ########.fr       */
+/*   Created: 2024/05/29 20:41:25 by yregragu          #+#    #+#             */
+/*   Updated: 2024/05/29 20:42:38 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+// rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
+// 
+// rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
+// 
+// rrr : rra and rrb at the same time.
 
-t_list *ft_swap(t_stack *a)
-{
-	
-}
+void    

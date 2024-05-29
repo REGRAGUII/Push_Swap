@@ -6,51 +6,55 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:59:02 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/24 23:50:31 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/28 00:37:32 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-
-void	build_stack(t_list **a, char *str)
+t_list *new_node (int cont)
 {
-    int 	i;
-    long	num;
-	
-	i = 0;
-	printf("%s\n", str);
-	num = ft_atoi(str);
-	printf("%d", num);
-	lstadd_back(a, new_node(num));
+    t_list *node;
+
+    node = malloc(sizeof(t_list));
+    if(!node)
+        return (NULL);
+    node->content = cont;
+    node->next = NULL;
+    return (node);   
 }
 
 
-int	check_double(t_list *a)
+void	lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	while (a)
+	temp = *lst;
+	if (!temp)
 	{
-		temp = a->next;
-		while (temp)
-		{
-			if(a->content == temp->content)
-				return (0);
-			temp = temp->next;
-		}
-		a = a->next;
+		*lst = new;
+		return ;
 	}
-	return (1);
+	while (temp)
+	{
+		if (temp->next)
+			temp = temp->next;
+		else
+		{
+			temp->next = new;
+			return ;
+		}
+	}
 }
-// int		int_border(char *str)
-// {
-// 	int	num;
-	
-// 	num = ft_atoi(str);
-// 	if(num > INT_MAX || num < INT_MIN)
-// 		return (0);
-// 	return (1);
-// }
+int	lst_size(t_list *a)
+{
+	int	x;
 
-	// -2147483648
+	x = 0;
+	while(a)
+	{
+		a = a->next;
+		x++;
+	}
+	return (x);
+}
