@@ -6,12 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 00:18:02 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/29 18:37:07 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:06:12 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // sa (swap a): Swap the first 2 elements at the top of stack a.
 // Do nothing if there is only one or no elements.
+
 #include "../includes/push_swap.h"
 
 void    swap_a(t_list *a, int flag)

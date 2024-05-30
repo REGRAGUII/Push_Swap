@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 15:45:55 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/28 00:21:30 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:06:49 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ int	build_stack(t_list **a, char *str)
     long	num;
 	
 	i = 0;
-	printf("|%s|\n", str);
 	num = ft_atoi(str);
 	if(num == 2147483648)
 		return (0);
 	lstadd_back(a, new_node(num));
 	return (1);
 }
-
 
 int	check_double(t_list *a)
 {
@@ -69,9 +67,6 @@ int valid_arg(char *str)
     }
     return 1;
 }
-
-
-
 
 int	ft_parse(t_list **a, char **av, int size)
 {

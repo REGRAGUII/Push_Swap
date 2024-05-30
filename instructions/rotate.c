@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:23:54 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/29 20:40:41 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:48:32 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	rotate_a(t_list **a, int flag)
 	
 	if (!*a || !(*a)->next) 
 		return ;
-		
 	first_node = *a;
 	*a = first_node->next;
 	first_node->next = NULL;

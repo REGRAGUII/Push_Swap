@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/28 00:35:23 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:06:57 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void print_list(t_list *lst) {
     printf("\n");
 }
 
-
 int main(int ac, char **av)
 {
     t_list		*a;
@@ -37,8 +36,8 @@ int main(int ac, char **av)
 		exit(1);
 	ft_parse(&a, av +1, ac - 1);
 	size = lst_size(a);
-	// printf("size of >>%d\n", size);
-	// print_list(a);
+	printf("size of >>%d\n", size);
+	print_list(a);
 	free_stack(&a);
 	// free_stack(&b);
 	return 0;

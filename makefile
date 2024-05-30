@@ -6,7 +6,12 @@ SRC = 	main.c \
 		ft_error.c \
 		ft_parse.c \
 		ft_stack.c \
+		instructions/push.c \
+		instructions/swap.c \
+		instructions/rotate.c \
+		instructions/reverse_rotate.c \
 		libft/libft.a \
+
 		
 
 ${NAME} : ${SRC}

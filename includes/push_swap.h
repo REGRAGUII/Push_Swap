@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/29 20:41:06 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:03:12 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 	
 } t_list;
 
-void    ft_error(char *message, int fdd);
+// void    ft_error(char *message, int fdd);
 int		ft_parse(t_list **a, char **av, int size);
 int		valid_arg(char *str);
 void	free_double(char **str);
@@ -51,6 +51,8 @@ void	push_b(t_list **a, t_list **b);
 void	rotate_a(t_list **a, int flag);
 void	rotate_b(t_list **b, int flag);
 void	rotate_rr(t_list **a, t_list **b);
-
+void    rrotate_a(t_list **stack, int flag);
+void    rrotate_b(t_list **stack, int flag);
+void	rrotate_ab(t_list **stack, t_list **stack0);
 
 #endif
