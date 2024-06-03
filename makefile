@@ -10,6 +10,7 @@ SRC = 	main.c \
 		instructions/swap.c \
 		instructions/rotate.c \
 		instructions/reverse_rotate.c \
+		algorithm/sort_3.c \
 		libft/libft.a \
 
 		

@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 15:14:36 by youssef           #+#    #+#             */
-/*   Updated: 2024/05/30 17:06:57 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:27:21 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ int main(int ac, char **av)
 		exit(1);
 	ft_parse(&a, av +1, ac - 1);
 	size = lst_size(a);
-	printf("size of >>%d\n", size);
+	if (size == 3)
+		sort_3(&a, &b, size);
+	// else if (size == 5)
+	// 	sort_5(&a, &b, size);
+	else
+		push_swap(&a, &b, size);
+	// printf("size of >>%d\n", size);
 	print_list(a);
 	free_stack(&a);
-	// free_stack(&b);
+	free_stack(&b);
 	return 0;
 }

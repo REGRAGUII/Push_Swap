@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/30 17:03:12 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/05/31 23:43:10 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ void    rrotate_a(t_list **stack, int flag);
 void    rrotate_b(t_list **stack, int flag);
 void	rrotate_ab(t_list **stack, t_list **stack0);
 
+//algorithme
+void    sort_3(t_list **a, t_list **b, int size);
+void    sort_5(t_list **a, t_list **b, int size);
+int		get_min_index(t_list *a, int i);
+int		get_min(t_list *a);
 #endif
