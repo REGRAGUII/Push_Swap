@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:49:54 by yregragu          #+#    #+#             */
-/*   Updated: 2024/06/10 00:39:32 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:43:11 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void    sort_5(t_list **a, t_list **b, int size)
 {
+    int	min;
+	
+    while (!sorted(a))
+    {
+        if
+    }
     
     
 }

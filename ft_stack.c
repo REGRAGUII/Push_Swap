@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:59:02 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/28 00:37:32 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:41:58 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_list *new_node (int cont)
     node->next = NULL;
     return (node);   
 }
-
 
 void	lstadd_back(t_list **lst, t_list *new)
 {
@@ -46,6 +45,7 @@ void	lstadd_back(t_list **lst, t_list *new)
 		}
 	}
 }
+
 int	lst_size(t_list *a)
 {
 	int	x;
@@ -57,4 +57,17 @@ int	lst_size(t_list *a)
 		x++;
 	}
 	return (x);
+}
+
+int sorted(t_list *a)
+{
+	if(!a)
+		return (1);
+	while (a->next)
+	{
+		if(a->content > a->next->content)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

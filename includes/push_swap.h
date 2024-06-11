@@ -6,7 +6,7 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/05/31 23:43:10 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:42:51 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	print_list(t_list *lst);
 void	free_stack(t_list **a);
 int		check_double(t_list *a);
 int		lst_size(t_list *a);
+int		sorted(t_list *a);
 
 //instruction functions
 void    swap_a(t_list *a, int flag);
