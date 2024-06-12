@@ -38,8 +38,10 @@ int main(int ac, char **av)
 	size = lst_size(a);
 	if (size == 3 && !sorted(a))
 		sort_3(&a, size);
+	else if (size == 4 && !sorted(a))
+		sort_4(&a, &b);
 	else if (size == 5)
-		sort_5(&a, &b, size);
+		sort_5(&a, &b);
 	// else
 	// 	push_swap(&a, &b, size);
 	// printf("size of >>%d\n", size);

@@ -58,7 +58,9 @@ void	rrotate_ab(t_list **stack, t_list **stack0);
 
 //algorithme
 void    sort_3(t_list **a, int size);
-void    sort_5(t_list **a, t_list **b, int size);
-int		get_min_index(t_list *a, int i);
+void    sort_4(t_list **a, t_list **b);
+void    sort_5(t_list **a, t_list **b);
+int		get_index(t_list *a, int i);
 int		get_min(t_list *a);
+
 #endif

@@ -26,7 +26,7 @@ int get_min(t_list *a)
     return (min);
 }
 
-int	get_min_index(t_list *a, int i)
+int	get_index(t_list *a, int i)
 {
 	int	index;
 
