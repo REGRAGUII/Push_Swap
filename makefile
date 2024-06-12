@@ -11,6 +11,8 @@ SRC = 	main.c \
 		instructions/rotate.c \
 		instructions/reverse_rotate.c \
 		algorithm/sort_3.c \
+		algorithm/sort_5.c \
+		algorithm/helper.c \
 		libft/libft.a \
 
 		

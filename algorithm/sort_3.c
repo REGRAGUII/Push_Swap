@@ -6,13 +6,13 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:56:57 by yregragu          #+#    #+#             */
-/*   Updated: 2024/06/10 00:37:35 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/12 03:01:07 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    sort_3(t_list **a, t_list **b, int size)
+void    sort_3(t_list **a, int size)
 {
     int min;
     
