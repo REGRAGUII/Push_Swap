@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youssef <youssef@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:12:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/06/12 03:01:01 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/06/20 17:34:15 by youssef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    rrotate_a(t_list **stack, int flag);
 void    rrotate_b(t_list **stack, int flag);
 void	rrotate_ab(t_list **stack, t_list **stack0);
 
-//algorithme
+//algorithm
 void    sort_3(t_list **a, int size);
 void    sort_4(t_list **a, t_list **b);
 void    sort_5(t_list **a, t_list **b);
