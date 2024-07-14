@@ -14,22 +14,96 @@
 
 void    push_swap(t_list **a, t_list **b, int size)
 {
-    int index;
-    int rarnge;
+    sort_array(a, size);
+	algo(a, b, size);
+}
 
-    // range = ft_range(size);
 
-    index = get_index(&a, get_min);
-    while (*a)
-    {
-        if (index < size(b))
-        {
-        	push_b(*a, *b);
-    		rotate_b(*b, 1):
+static void	indexing(t_list **a, int *array, int size)
+{
+	t_list	*ls;
+	int 	i;
+	
+	ls = *a;
+	while(ls)
+	{
+		i = 0;
+		while(i < size)
+		{
+			if(ls->content == array[i])
+			{
+				ls->index = i;
+				break;
+			}
+			i++;
 		}
-		else if (index <= size(b))
-			push_b(*a, *b);
-		else
-			rotate_a(*a);
+		ls = ls->next;
 	}
 }
+static void	bubble_sort(int *array, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while(i < size - 1)
+	{
+		j = i + 1;
+		while(j < size - i - 1)
+		{
+			if(array[j] < array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+static	void sort_array(t_list **a, int size)
+{
+	int		*array;
+	int		i;
+	t_list	*temp;
+	
+	i = 0;
+	temp = *a;
+	array = malloc(sizeof(int) * size);
+	if(!array)
+		return;
+	while (temp)
+	{
+		array[i] = temp->content;
+		i++;
+		temp = temp->next;
+	}
+	bubble_sort(array, size);
+	indexing(a, array, size);
+	free(array);
+}
+
+
+static	void algo(t_list **a, t_list **b, int size)
+{
+	int renge;
+	int size;
+
+    range = ft_range(size);
+	while (*a)
+    {
+		size = lst_size(*b);
+        if (index < size)
+        {
+        	push_b(*a, *b);
+    		rotate_b(*b, 1);
+		}
+		else if (index <= size + range)
+			push_b(*a, *b);
+		else
+			rotate_a(*a, 1);
+}
+
+int

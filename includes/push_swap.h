@@ -23,8 +23,8 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
-	
 } t_list;
 
 // void    ft_error(char *message, int fdd);
@@ -62,5 +62,6 @@ void    sort_4(t_list **a, t_list **b);
 void    sort_5(t_list **a, t_list **b);
 int		get_index(t_list *a, int i);
 int		get_min(t_list *a);
+
 
 #endif

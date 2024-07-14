@@ -4,6 +4,7 @@
         "push_swap.h": "c",
         "fcntl.h": "c",
         "limits.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "stdlib.h": "c"
     }
 }
