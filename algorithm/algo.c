@@ -88,22 +88,29 @@ static	void sort_array(t_list **a, int size)
 
 static	void algo(t_list **a, t_list **b, int size)
 {
-	int renge;
+	int range;
 	int size;
+	
 
     range = ft_range(size);
 	while (*a)
     {
 		size = lst_size(*b);
-        if (index < size)
+        if ((*a)->index < size)
         {
         	push_b(*a, *b);
     		rotate_b(*b, 1);
 		}
-		else if (index <= size + range)
+		else if ((*a)->index <= size + range)
 			push_b(*a, *b);
 		else
 			rotate_a(*a, 1);
 }
 
-int
+int	ft_range(t_list *b)
+{
+	int size;
+
+	size = lst_size(b);
+	if (size = )
+}
