@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = cc -fsanitize=address
+CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 SRC = 	main.c \
 		free.c \
@@ -12,6 +12,7 @@ SRC = 	main.c \
 		instructions/reverse_rotate.c \
 		algorithm/sort.c \
 		algorithm/helper.c \
+		algorithm/algo.c \
 		libft/libft.a \
 
 		

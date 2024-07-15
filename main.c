@@ -13,10 +13,10 @@
 #include "./includes/push_swap.h"
 
 void print_list(t_list *lst) {
-    printf("List contents: ");
+    printf("List contents: \n");
     while (lst) 
 	{
-        printf("content : %d ", lst->content);
+        printf("content : %d | index : %d\n", lst->content, lst->index);
         lst = lst->next;
     }
     printf("\n");
@@ -33,19 +33,19 @@ int main(int ac, char **av)
 	size = 0;
 	
 	if(ac == 1)
-		exit(1);
+		ft_error();
 	ft_parse(&a, av +1, ac - 1);
 	size = lst_size(a);
-	if (size == 3 && !sorted(a))
-		sort_3(&a, size);
-	else if (size == 4 && !sorted(a))
-		sort_4(&a, &b);
-	else if (size == 5)
-		sort_5(&a, &b);
-	// else
-	// 	push_swap(&a, &b, size);
-	// printf("size of >>%d\n", size);
+	// if (size == 3 && !sorted(a))
+	// 	sort_3(&a, size);
+	// else if (size == 4)
+	// 	sort_4(&a, &b);
+	// else if (size == 5)
+	// 	sort_5(&a, &b);
+	// else if(size > 5 && !sorted(a))
+	push_swap(&a, &b);
 	print_list(a);
+	print_list(b);
 	free_stack(&a);
 	free_stack(&b);
 	return 0;

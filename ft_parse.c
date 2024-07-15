@@ -86,7 +86,7 @@ int	ft_parse(t_list **a, char **av, int size)
 			{
 				free_double(str);
 				free_stack(a);
-                exit(1);
+                ft_error();
 			}
         }
 		free_double(str);	

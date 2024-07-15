@@ -32,6 +32,7 @@ int		ft_parse(t_list **a, char **av, int size);
 int		valid_arg(char *str);
 void	free_double(char **str);
 int		int_border(char *str);
+char	*ft_error(void);
 
 //linked list functions
 t_list	*new_node(int content);		
@@ -62,6 +63,6 @@ void    sort_4(t_list **a, t_list **b);
 void    sort_5(t_list **a, t_list **b);
 int		get_index(t_list *a, int i);
 int		get_min(t_list *a);
-
+void    push_swap(t_list **a, t_list **b);
 
 #endif
