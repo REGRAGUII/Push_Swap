@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-int	ft_isspace (char *str)
+int	ft_isspace(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] != ' ')
-			return(1);
+		if (str[i] != ' ')
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }

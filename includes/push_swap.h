@@ -63,6 +63,8 @@ void    sort_4(t_list **a, t_list **b);
 void    sort_5(t_list **a, t_list **b);
 int		get_index(t_list *a, int i);
 int		get_min(t_list *a);
+int		get_max(t_list *a);
+int		ft_range(t_list *a);
 void    push_swap(t_list **a, t_list **b);
 
 #endif

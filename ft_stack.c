@@ -12,16 +12,16 @@
 
 #include "includes/push_swap.h"
 
-t_list *new_node (int cont)
+t_list	*new_node(int cont)
 {
-    t_list *node;
+	t_list	*node;
 
-    node = malloc(sizeof(t_list));
-    if(!node)
-        return (NULL);
-    node->content = cont;
-    node->next = NULL;
-    return (node);   
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = cont;
+	node->next = NULL;
+	return (node);
 }
 
 void	lstadd_back(t_list **lst, t_list *new)
@@ -48,24 +48,26 @@ void	lstadd_back(t_list **lst, t_list *new)
 
 int	lst_size(t_list *a)
 {
-	int	x;
+	int		x;
+	t_list	*tmp;
 
+	tmp = a;
 	x = 0;
-	while(a)
+	while (tmp)
 	{
-		a = a->next;
+		tmp = tmp->next;
 		x++;
 	}
 	return (x);
 }
 
-int sorted(t_list *a)
+int	sorted(t_list *a)
 {
-	if(!a)
+	if (!a)
 		return (1);
 	while (a->next)
 	{
-		if(a->content > a->next->content)
+		if (a->content > a->next->content)
 			return (0);
 		a = a->next;
 	}

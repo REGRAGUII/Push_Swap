@@ -20,8 +20,8 @@ void	rotate_a(t_list **a, int flag)
 {
 	t_list	*first_node;
 	t_list	*last_node;
-	
-	if (!*a || !(*a)->next) 
+
+	if (!*a || !(*a)->next)
 		return ;
 	first_node = *a;
 	*a = first_node->next;
@@ -38,30 +38,27 @@ void	rotate_b(t_list **b, int flag)
 	t_list	*first_node;
 	t_list	*last_node;
 
-	if(!*b || !(*b)->next)
+	if (!*b || !(*b)->next)
 		return ;
-	
 	first_node = *b;
 	*b = first_node->next;
 	first_node->next = NULL;
 	last_node = *b;
-	while(last_node->next)
+	while (last_node->next)
 		last_node = last_node->next;
 	last_node->next = first_node;
-	if(flag)
+	if (flag)
 		write(1, "rb\n", 3);
-	
 }
 void	rotate_rr(t_list **a, t_list **b)
 {
 	rotate_a(a, 0);
 	rotate_b(b, 0);
 	write(1, "rr\n", 3);
-	
 }
 // void print_list(t_list *lst) {
 //     printf("List contents: ");
-//     while (lst) 
+//     while (lst)
 // 	{
 //         printf("content : %d ", lst->content);
 //         lst = lst->next;
@@ -74,10 +71,10 @@ void	rotate_rr(t_list **a, t_list **b)
 // 	t_list *c = new_node(7);
 //  	t_list *b = new_node(10);
 // 	t_list *d = new_node(11);
-	
+
 // 	lstadd_back(&a, b);
 // 	lstadd_back(&a, c);
-	
+
 // 	lstadd_back(&d, new_node(99));
 
 // 	print_list(a);
@@ -89,6 +86,5 @@ void	rotate_rr(t_list **a, t_list **b)
 // 	rotate_rr(&d, &a);
 // 	print_list(a);
 // 	print_list(d);
-	
-		
+
 // }

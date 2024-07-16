@@ -30,7 +30,7 @@ static int	ft_count(int n)
 	return (count);
 }
 
-static	char	*ft_isnegative(long n, int length)
+static char	*ft_isnegative(long n, int length)
 {
 	char	*str;
 

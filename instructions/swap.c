@@ -15,7 +15,7 @@
 
 #include "../includes/push_swap.h"
 
-void    swap_a(t_list *a, int flag)
+void	swap_a(t_list *a, int flag)
 {
 	int	temp;
 
@@ -24,7 +24,7 @@ void    swap_a(t_list *a, int flag)
 	temp = a->content;
 	a->content = a->next->content;
 	a->next->content = temp;
-	if(flag)
+	if (flag)
 		write(1, "sa\n", 3);
 }
 
@@ -32,12 +32,12 @@ void	swap_b(t_list *b, int flag)
 {
 	int	temp;
 
-	if(!b || !b->next)
+	if (!b || !b->next)
 		return ;
 	temp = b->content;
 	b->content = b->next->content;
 	b->next->content = temp;
-	if(flag)
+	if (flag)
 		write(1, "sb\n", 3);
 }
 void	swap_ab(t_list *a, t_list *b)
@@ -47,11 +47,9 @@ void	swap_ab(t_list *a, t_list *b)
 	write(1, "ss\n", 3);
 }
 
-
-
 // void print_list(t_list *lst) {
 //     printf("List contents: ");
-//     while (lst) 
+//     while (lst)
 // 	{
 //         printf("content : %d ", lst->content);
 //         lst = lst->next;
@@ -64,10 +62,10 @@ void	swap_ab(t_list *a, t_list *b)
 // 	t_list *c = new_node(7);
 //  	t_list *b = new_node(10);
 // 	t_list *d = new_node(11);
-	
+
 // 	lstadd_back(&a, b);
 // 	lstadd_back(&a, c);
-	
+
 // 	lstadd_back(&d, new_node(99));
 // 	// lstadd_back(&b, c);
 
@@ -80,5 +78,5 @@ void	swap_ab(t_list *a, t_list *b)
 // 	swap_ab(a, d);
 // 	print_list(a);
 // 	print_list(d);
-		
+
 // }

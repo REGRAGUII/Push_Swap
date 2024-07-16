@@ -14,10 +14,10 @@
 
 void	free_double(char **str)
 {
-    int i;
+	int	i;
 
-    i = 0;
- 	while (str[i])
+	i = 0;
+	while (str[i])
 	{
 		free(str[i]);
 		i++;
@@ -29,9 +29,8 @@ void	free_stack(t_list **a)
 {
 	t_list	*temp;
 
-	
 	temp = *a;
-	while(temp)
+	while (temp)
 	{
 		*a = temp->next;
 		free(temp);

@@ -14,12 +14,13 @@
 
 int	build_stack(t_list **a, char *str)
 {
-    int 	i;
-    long	num;
-	
+	int		i;
+	long	num;
+
 	i = 0;
+	// printf("ksdfjhkjfdghdfskj\n");
 	num = ft_atoi(str);
-	if(num == 2147483648)
+	if (num == 2147483649)
 		return (0);
 	lstadd_back(a, new_node(num));
 	return (1);
@@ -34,8 +35,8 @@ int	check_double(t_list *a)
 		temp = a->next;
 		while (temp)
 		{
-			if(a->content == temp->content)
-				return(0);
+			if (a->content == temp->content)
+				return (0);
 			temp = temp->next;
 		}
 		a = a->next;
@@ -43,29 +44,32 @@ int	check_double(t_list *a)
 	return (1);
 }
 
-int valid_arg(char *str)
+int	valid_arg(char *str)
 {
-    int i = 0;
+	int	i;
 
-	 
-    if (str[i] == '\0')
-        return 0;
-    while (str[i])
-    { 
-        if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '+' && str[i] != '-')
-            return 0;
-        if ((str[i] == '+' || str[i] == '-') && 
-            (i > 0 && str[i-1] != ' ' && !ft_isdigit(str[i-1])))
-            return 0;
-        if ((str[i] == '+' || str[i] == '-') && 
-            (str[i+1] == '\0' || !ft_isdigit(str[i+1])))
-            return 0;
-		if(ft_isdigit(str[i]) && (str[i + 1] == '-' || str[i + 1] == '+')
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '+'
+			&& str[i] != '-')
+			return (0);
+		if ((str[i] == '+' || str[i] == '-') && (i > 0 && str[i - 1] != ' '
+				&& !ft_isdigit(str[i - 1])))
+			return (0);
+		if ((str[i] == '+' || str[i] == '-') && (str[i + 1] == '\0'
+				|| !ft_isdigit(str[i + 1])))
+			return (0);
+		if (ft_isdigit(str[i]) && (str[i + 1] == '-' || str[i + 1] == '+')
 			&& ft_isdigit(str[i + 2]))
-			return(0);
-        i++;
-    }
-    return 1;
+			return (0);
+		if (str[i] == ' ' || str[i] == '	')
+			return(1);
+		i++;
+	}
+	return (1);
 }
 
 int	ft_parse(t_list **a, char **av, int size)
@@ -74,22 +78,23 @@ int	ft_parse(t_list **a, char **av, int size)
 	int		j;
 	char	**str;
 
-    j = -1;
-	while (++j <= size)
+	j = -1;
+	while (++j < size)
 	{
-		if(!(str = ft_split(av[j], ' ')))
-            return (0);
-        i = -1;
+		str = ft_split(av[j], ' ');
+		i = -1;	
 		while (str[++i])
 		{
-            if(!valid_arg(str[i]) || !build_stack(a, str[i]) || !check_double(*a))
+			if (!valid_arg(str[i]) || !build_stack(a, str[i])
+				|| !check_double(*a))
 			{
 				free_double(str);
 				free_stack(a);
-                ft_error();
+				ft_error();
 			}
-        }
-		free_double(str);	
+		}
+		free_double(str);
 	}
 	return (1);
 }
+

@@ -12,20 +12,17 @@
 
 #include "../includes/push_swap.h"
 
-// int	ft_range(t_list *a)
-// {
-// 	int size;
-
-// 	size = lst_size(b);
-// 	if (size == 25)
-// 		return (15);
-// 	if (size == 60)
-// 		retutn();
-// 	if (size == 100)
-// 		return (30);
-// }
-
-
+static void	digging(int maximum, t_list **b, int size)
+{
+	while (maximum)
+	{
+		if (maximum >= size / 2)
+			rrotate_b(b, 1);
+		else if (maximum < size / 2)
+			rotate_b(b, 1);
+		maximum = get_max(*b);
+	}
+}
 static void	indexing(t_list **a)
 {
 	t_list	*tmp;
@@ -33,17 +30,17 @@ static void	indexing(t_list **a)
 
 	tmp = *a;
 	tmp1 = *a;
-	while(tmp)
+	while (tmp)
 	{
-		tmp->index = 0;
+		tmp->index = 1;
 		tmp = tmp->next;
 	}
 	tmp = *a;
-	while(tmp)
+	while (tmp)
 	{
-		while(tmp1)
+		while (tmp1)
 		{
-			if(tmp->content > tmp1->content)
+			if (tmp->content > tmp1->content)
 				tmp->index++;
 			tmp1 = tmp1->next;
 		}
@@ -51,30 +48,44 @@ static void	indexing(t_list **a)
 		tmp = tmp->next;
 	}
 }
-static	void algo(t_list **a, t_list **b)
-{
-	// int range = 15;
-	int size;
-	
 
-    // range = ft_range(a);
+static void	push_back(t_list **a, t_list **b, int size)
+{
+	int	maximum;
+
+	indexing(b);
+	while (*b)
+	{
+		maximum = get_max(*b);
+		digging(maximum, b, lst_size(*b));
+		push_a(a, b);
+	}
+}
+
+static void	algo(t_list **a, t_list **b)
+{
+	int	range;
+	int	size;
+
+	range = ft_range(*a);
 	while (*a)
-    {
+	{
 		size = lst_size(*b);
-        if ((*a)->index < size)
-        {
-        	push_b(a, b);
-    		rotate_b(b, 1);
+		if ((*a)->index <= size)
+		{
+			push_b(a, b);
+			rotate_b(b, 1);
 		}
 		else if ((*a)->index <= size + range)
 			push_b(a, b);
 		else
 			rotate_a(a, 1);
 	}
+	push_back(a, b, size);
 }
 
-void    push_swap(t_list **a, t_list **b)
+void	push_swap(t_list **a, t_list **b)
 {
-    indexing(a);
+	indexing(a);
 	algo(a, b);
 }
