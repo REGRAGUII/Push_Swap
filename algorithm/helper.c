@@ -26,12 +26,10 @@ int	get_min(t_list *a)
 	return (min);
 }
 
-
 int	get_max(t_list *a)
 {
-	int		max;
-	int		size;
-	t_list	*temp;
+	int	max;
+	int	size;
 
 	max = 0;
 	size = lst_size(a);
@@ -57,17 +55,18 @@ int	get_index(t_list *a, int i)
 	}
 	return (index);
 }
+
 int	ft_range(t_list *a)
 {
-	int size;
+	int	size;
 
 	size = lst_size(a);
-    if (size <= 15)
-        return(2);
-	if (size <= 100)
+	if (size <= 15)
+		return (2);
+	else if (size <= 100)
 		return (15);
 	else if (size <= 500)
-		return(30);
-    else
-        return (45);
+		return (30);
+	else
+		return (45);
 }

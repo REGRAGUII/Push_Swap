@@ -18,7 +18,6 @@ int	build_stack(t_list **a, char *str)
 	long	num;
 
 	i = 0;
-	// printf("ksdfjhkjfdghdfskj\n");
 	num = ft_atoi(str);
 	if (num == 2147483649)
 		return (0);
@@ -65,8 +64,6 @@ int	valid_arg(char *str)
 		if (ft_isdigit(str[i]) && (str[i + 1] == '-' || str[i + 1] == '+')
 			&& ft_isdigit(str[i + 2]))
 			return (0);
-		if (str[i] == ' ' || str[i] == '	')
-			return(1);
 		i++;
 	}
 	return (1);
@@ -82,7 +79,7 @@ int	ft_parse(t_list **a, char **av, int size)
 	while (++j < size)
 	{
 		str = ft_split(av[j], ' ');
-		i = -1;	
+		i = -1;
 		while (str[++i])
 		{
 			if (!valid_arg(str[i]) || !build_stack(a, str[i])
@@ -97,4 +94,3 @@ int	ft_parse(t_list **a, char **av, int size)
 	}
 	return (1);
 }
-

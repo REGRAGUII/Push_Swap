@@ -23,6 +23,7 @@ static void	digging(int maximum, t_list **b, int size)
 		maximum = get_max(*b);
 	}
 }
+
 static void	indexing(t_list **a)
 {
 	t_list	*tmp;
@@ -49,7 +50,7 @@ static void	indexing(t_list **a)
 	}
 }
 
-static void	push_back(t_list **a, t_list **b, int size)
+static void	push_back(t_list **a, t_list **b)
 {
 	int	maximum;
 
@@ -81,7 +82,7 @@ static void	algo(t_list **a, t_list **b)
 		else
 			rotate_a(a, 1);
 	}
-	push_back(a, b, size);
+	push_back(a, b);
 }
 
 void	push_swap(t_list **a, t_list **b)

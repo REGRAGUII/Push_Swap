@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	sort_3(t_list **a, int size)
+void	sort_3(t_list **a)
 {
 	if (get_index(*a, get_min(*a)) == 1)
 	{
@@ -48,7 +48,7 @@ void	sort_4(t_list **a, t_list **b)
 	min = get_index(*a, get_min(*a));
 	if (min <= 2)
 	{
-		while(min <= 2 && min > 0)
+		while (min <= 2 && min > 0)
 		{
 			rotate_a(a, 1);
 			min--;
@@ -59,29 +59,11 @@ void	sort_4(t_list **a, t_list **b)
 	if (!sorted(*a))
 	{
 		push_b(a, b);
-		sort_3(a, 3);
+		sort_3(a);
 		push_a(a, b);
 	}
 }
 
-
-// void	sort_4(t_list **a, t_list **b)
-// {
-// 	t_list	*head;
-
-// 	head = *a;
-// 	while (*a)
-// 	{
-// 		if (get_min(head, a))
-// 		{
-// 			push_b(a, b);
-// 			break ;
-// 		}
-// 		rotate_a(a, 1);
-// 	}
-// 	sort_3(*a, 3);
-// 	push_a(a, b);
-// }
 void	sort_5(t_list **a, t_list **b)
 {
 	int	min;
