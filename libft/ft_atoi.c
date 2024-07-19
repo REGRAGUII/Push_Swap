@@ -11,7 +11,23 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
+#include <stdio.h>
+
+static long	_check(const char *nptr, int i, int sg)
+{
+	long	rs;
+
+	rs = 0;
+	while (nptr[i])
+	{
+		if (nptr[i] >= '0' && nptr[i] <= '9')
+			rs = rs * 10 + nptr[i] - '0';
+		if (sg * rs > 2147483647 || sg * rs < -2147483648)
+			return (2147483649);
+		i++;
+	}
+	return (sg * rs);
+}
 
 long	ft_atoi(const char *nptr)
 {
@@ -26,18 +42,13 @@ long	ft_atoi(const char *nptr)
 	{
 		i++;
 	}
-	if (nptr[i++] == '-')
+	if (nptr[i] == '-')
 	{
 		sg = -1;
-	}
-	else if (nptr[i] == '+')
 		i++;
-	while (nptr[i++])
-	{
-		if (nptr[i] >= '0' && nptr[i] <= '9')
-			rs = rs * 10 + nptr[i] - '0';
-		if (sg * rs > 2147483647 || sg * rs < -2147483648)
-			return (2147483649);
 	}
-	return (sg * rs);
+	else if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	rs = _check(nptr, i, sg);
+	return (rs);
 }

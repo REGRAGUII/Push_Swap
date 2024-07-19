@@ -6,11 +6,11 @@
 /*   By: yregragu <yregragu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 21:31:45 by yregragu          #+#    #+#             */
-/*   Updated: 2024/06/09 18:14:15 by yregragu         ###   ########.fr       */
+/*   Updated: 2024/07/18 17:07:23 by yregragu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../push_swap.h"
 
 int	get_min(t_list *a)
 {
@@ -66,7 +66,7 @@ int	ft_range(t_list *a)
 	else if (size <= 100)
 		return (15);
 	else if (size <= 500)
-		return (30);
+		return (35);
 	else
 		return (45);
 }

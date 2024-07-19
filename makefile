@@ -1,5 +1,6 @@
 NAME = push_swap
 CC = cc 
+LIBFTDIR = libft
 CFLAGS = -Wall -Wextra -Werror
 SRC = 	main.c \
 		free.c \
@@ -13,16 +14,26 @@ SRC = 	main.c \
 		algorithm/sort.c \
 		algorithm/helper.c \
 		algorithm/algo.c \
-		libft/libft.a \
+
+OBJS =$(SRC:.c=.o)
 
 		
-
-${NAME} : ${SRC}
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
-
 all : ${NAME}
 
-fclean :
+${NAME} : ${OBJS}
+	make -C libft --silent
+	$(CC) $(CFLAGS) $(OBJS) -L${LIBFTDIR} -lft -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS)  -c $< -o $@
+
+clean : 
+	make clean -C libft
+	rm -rf $(OBJS)
+
+
+fclean : clean
+	make fclean -C libft
 	rm -rf $(NAME)
 
 re : fclean all

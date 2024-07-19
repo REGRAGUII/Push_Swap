@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 int	build_stack(t_list **a, char *str)
 {
-	int		i;
 	long	num;
 
-	i = 0;
 	num = ft_atoi(str);
-	if (num == 2147483649)
+	if (num == 2147483649 || num == -2147483649)
 		return (0);
 	lstadd_back(a, new_node(num));
 	return (1);
